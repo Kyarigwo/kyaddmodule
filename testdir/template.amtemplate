@@ -1,0 +1,17 @@
+{-# START_FILE {{basename}}.txt #-}
+
+baseName: {{basename}}
+fileSystemPath: {{fspath}}
+modulePath: {{modpath}}
+fullName: {{modname}}
+
+{-# START_FILE {{basename}}Spec.txt #-}
+
+module {{modpath}}.{{basename}}Spec (spec) where
+
+import HSpec
+import {{modname}}
+
+spec :: Spec
+spec = describe "spec"
+

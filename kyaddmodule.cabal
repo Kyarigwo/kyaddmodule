@@ -1,0 +1,65 @@
+name:                kyaddmodule
+version:             0.9.0.0
+synopsis:            Program to add a module to a Haskell stack project based on a template
+description:         The program addmodule TEMPLATE_PATH MODULE_NAME will create new file(s)
+                     for the module MODULE_NAME based on the description in the
+                     TEMPLATE_PATH file.
+homepage:            https://github.com/Kyarigwo
+license:             MIT
+license-file:        LICENSE
+author:              Kyarigwo
+maintainer:          bwielinga@iprimus.com.au
+copyright:           2016 Bruce Wielinga
+category:            Development
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Kyarigwo.AddModule
+
+  build-depends:       base >= 4.7 && < 5
+                     , classy-prelude
+                     , text
+                     , semigroups
+                     , regex-applicative
+                     , hastache
+                     , syb
+                     , filepath
+                     , directory
+                       
+  default-extensions:  NoImplicitPrelude OverloadedStrings
+  default-language:    Haskell2010
+
+executable kyaddmodule
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , kyaddmodule
+                     , classy-prelude
+                     , text
+                     , optparse-applicative
+
+  default-extensions:  NoImplicitPrelude OverloadedStrings
+  default-language:    Haskell2010
+
+test-suite haskell-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , kyaddmodule
+                     , classy-prelude
+                     , text
+                     , hspec
+                     , hspec-discover
+                     , semigroups
+
+  default-extensions:  NoImplicitPrelude OverloadedStrings
+  default-language:    Haskell2010
+
+source-repository head
+  type:      git
+  location:  https://github.com/Kyarigwo 
