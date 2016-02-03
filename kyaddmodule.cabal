@@ -19,7 +19,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Kyarigwo.AddModule
 
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base 
                      , classy-prelude
                      , text
                      , semigroups
@@ -28,6 +28,7 @@ library
                      , syb
                      , filepath
                      , directory
+                     , optparse-applicative
                        
   default-extensions:  NoImplicitPrelude OverloadedStrings
   default-language:    Haskell2010

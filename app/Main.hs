@@ -17,3 +17,4 @@ args :: Parser Args
 args = Args
   <$> argument str (metavar "TEMPLATE")
   <*> argument (pack <$> str) (metavar "MODULE_NAME")
+

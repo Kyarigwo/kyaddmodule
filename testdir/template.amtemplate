@@ -1,17 +1,22 @@
-{-# START_FILE {{basename}}.txt #-}
+{-# START_FILE src/Kyarigwo/{{fspath}}/{{basename}}.hs #-}
 
-baseName: {{basename}}
-fileSystemPath: {{fspath}}
-modulePath: {{modpath}}
-fullName: {{modname}}
+module Kyarigwo.{{modname}}  where
 
-{-# START_FILE {{basename}}Spec.txt #-}
+import           ClassyPrelude
+import qualified Data.Text              as T
 
-module {{modpath}}.{{basename}}Spec (spec) where
+{-# START_FILE test/Kyarigwo/{{fspath}}/{{basename}}Spec.hs #-}
 
-import HSpec
-import {{modname}}
+module Kyarigwo.{{modname}}Spec(spec) where
+
+import ClassyPrelude
+import Test.Hspec
+import qualified Data.Text as T
+
+import Kyarigwo.{{modname}}
 
 spec :: Spec
-spec = describe "spec"
+spec = describe "{{modname}}" $
+ it "is a dummy test" (1 `shouldBe` 2)
+
 
